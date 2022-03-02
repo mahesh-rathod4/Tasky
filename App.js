@@ -1,28 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import * as React from "react";
+import { useColorScheme } from "react-native";
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeView from "./src/modules/Home/homeView";
 
-import { Text, StyleSheet, View } from "react-native";
-import React, { Component } from "react";
+const Stack = createNativeStackNavigator();
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>App</Text>
-      </View>
-    );
-  }
+
+function App() {
+  const scheme = useColorScheme();
+  return (
+    <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeView} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+export default App;

@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
