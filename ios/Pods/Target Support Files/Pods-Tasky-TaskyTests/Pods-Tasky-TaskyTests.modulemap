@@ -1,0 +1,6 @@
+module Pods_Tasky_TaskyTests {
+  umbrella header "Pods-Tasky-TaskyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
