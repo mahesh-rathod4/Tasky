@@ -15,6 +15,44 @@ import UIButton from "../../components/UIButton";
 import { Color } from "../../utils/Colors";
 
 export default class LoginView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      errorEmail: "",
+      errorPass: "",
+    };
+  }
+
+  validatePassword() {
+    var passwordReg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    if (this.state.password.length < 6) {
+      this.setState({ errorPass: "Please enter Valid Password" });
+      return;
+    }
+    if (passwordReg.test(this.state.password) === false) {
+      this.setState({ errorPass: "Please enter Valid Password" });
+      return;
+    } else {
+      this.setState({ errorPass: "" });
+    }
+  }
+
+  validateEmail() {
+    let emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    if (this.state.email.length < 6) {
+      this.setState({ errorEmail: "Please enter Valid Email" });
+      return;
+    }
+    if (emailReg.test(this.state.email) === false) {
+      this.setState({ errorEmail: "Please enter Valid Email" });
+      return;
+    } else {
+      this.setState({ errorEmail: "" });
+    }
+  }
+
   render() {
     return (
       <SafeAreaView>
@@ -31,20 +69,52 @@ export default class LoginView extends Component {
                 uri: "https://reactnative.dev/img/tiny_logo.png",
               }}
             />
-            <UITextField placeholder="Username" onChangeText={(value) => {}} />
+            <UITextField
+              placeholder="Username"
+              onChangeText={(value) => {
+                this.setState({ email: value });
+                this.validateEmail();
+              }}
+            />
+            <Text
+              style={{
+                fontSize: 10,
+                color: "red",
+                alignSelf: "stretch",
+                paddingHorizontal: 16,
+              }}
+            >
+              {this.state.errorEmail}
+            </Text>
             <UISecureTextField
               placeholder="Password"
               isSecureText={true}
-              onChangeText={(value) => {}}
+              onChangeText={(value) => {
+                this.setState({ password: value });
+                this.validatePassword();
+              }}
             />
+            <Text
+              style={{
+                fontSize: 10,
+                color: "red",
+                alignSelf: "stretch",
+                paddingHorizontal: 16,
+              }}
+            >
+              {this.state.errorPass}
+            </Text>
             <View style={styles.forgotPassword}>
               <TouchableOpacity>
                 <Text>Forgot your password?</Text>
               </TouchableOpacity>
             </View>
-            <UIButton isEnabled="false" title="Login" onTapBtn={() => {}} />
+            <UIButton isEnabled="false" title="Login" onTapBtn={() => {
+              this.validateEmail();
+              this.validatePassword();
+            }} />
             <Text style={{ paddingTop: 16 }}>OR</Text>
-            <View style={{flexDirection: "row"}}>
+            <View style={{ flexDirection: "row" }}>
               <TouchableOpacity style={styles.icon}>
                 <View>
                   <Image
@@ -70,10 +140,12 @@ export default class LoginView extends Component {
                 </View>
               </TouchableOpacity>
             </View>
-            <View style={{flexDirection: "row"}}>
+            <View style={{ flexDirection: "row" }}>
               <Text>Don’t have an account?</Text>
-              <TouchableOpacity style={{marginHorizontal: 4}}>
-                <Text style={{color:Color.primary,fontWeight:"bold"}}>Register</Text>
+              <TouchableOpacity style={{ marginHorizontal: 4 }}>
+                <Text style={{ color: Color.primary, fontWeight: "bold" }}>
+                  Register
+                </Text>
               </TouchableOpacity>
             </View>
           </View>
