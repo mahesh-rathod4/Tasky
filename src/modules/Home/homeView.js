@@ -13,11 +13,11 @@ export default class HomeView extends Component {
       },
 
       onNotification: function (notification) {
-        console.log("NOTIFICATION:", notification);
+        console.log("onNOTIFICATION:", notification);
         notification.finish(PushNotificationIOS.FetchResult.NoData);
       },
       onAction: function (notification) {
-        console.log("ACTION:", notification.action);
+        console.log("onAction:", notification.action);
         console.log("NOTIFICATION:", notification);
       },
       onRegistrationError: function (err) {
@@ -36,7 +36,6 @@ export default class HomeView extends Component {
   getToken = async () => {
     try {
       const token = await messaging().getToken();
-      console.log(token);
       if (token) return token;
     } catch (error) {
       console.log(error);
