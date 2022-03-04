@@ -10,6 +10,7 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.99.0] /Users/mtpc-99/
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.99.0] /Users/mtpc-99/.gradle/caches/transforms-3/bc97f4d16f54cc9d931131f676e764a8/transformed/jetified-flipper-fresco-plugin-0.99.0/AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-async-storage_async-storage] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-firebase_auth] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-13:12
+MERGED from [:react-native-firebase_firestore] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/firestore/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-firebase_messaging] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-43:12
 MERGED from [:react-native-firebase_app] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-27:12
 MERGED from [:react-native-push-notification] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/react-native-push-notification/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -36,6 +37,8 @@ MERGED from [com.facebook.fresco:memory-type-ashmem:2.5.0] /Users/mtpc-99/.gradl
 MERGED from [com.facebook.fresco:imagepipeline:2.5.0] /Users/mtpc-99/.gradle/caches/transforms-3/e7e95ada98971de838a69cb94e386a6f/transformed/jetified-imagepipeline-2.5.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.5.0] /Users/mtpc-99/.gradle/caches/transforms-3/08e4d6a8c60a1c064fffb592c93d8922/transformed/jetified-nativeimagetranscoder-2.5.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:2.5.0] /Users/mtpc-99/.gradle/caches/transforms-3/f4c9b9beaea438bfa25fc5c9d1063e12/transformed/jetified-imagepipeline-base-2.5.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:2:1-26:12
+MERGED from [io.grpc:grpc-android:1.41.0] /Users/mtpc-99/.gradle/caches/transforms-3/7f6bbcb9b2674d0ba622edde53d04fd0/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.material:material:1.1.0] /Users/mtpc-99/.gradle/caches/transforms-3/a05d2154a78a0f6c1080ad9094eb345e/transformed/material-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.3.0] /Users/mtpc-99/.gradle/caches/transforms-3/0e1fcb0115600141ea6b47249b31c449/transformed/appcompat-1.3.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/mtpc-99/.gradle/caches/transforms-3/2b38d775c2b8f1aa159fbaf00605887f/transformed/sqlite-framework-2.1.0/AndroidManifest.xml:17:1-24:12
@@ -55,6 +58,8 @@ MERGED from [com.google.android.gms:play-services-auth:20.1.0] /Users/mtpc-99/.g
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/b8b85c6cce8e75e892693ea4f6503e24/transformed/jetified-play-services-auth-api-phone-18.0.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/285fb5e2c3394a4c01cef549c8bd12e1/transformed/jetified-play-services-auth-base-18.0.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/99f0d32f93f04520ed4c90ac958e2963/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/mtpc-99/.gradle/caches/transforms-3/c4091d3daeda5f3157863779e364553b/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:15:1-26:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/5fc751c1d68b78ef76689fc6463c5a4b/transformed/jetified-firebase-database-collection-18.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/493a5b32eb8a4a7bb025ee227b7212c1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/f0c3ab1fef5c026ab0809fb03dc35275/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/4bf46508284e3d611d9650483caf8b17/transformed/jetified-firebase-installations-17.0.0/AndroidManifest.xml:2:1-24:12
@@ -101,6 +106,7 @@ MERGED from [androidx.print:print:1.0.0] /Users/mtpc-99/.gradle/caches/transform
 MERGED from [me.leolin:ShortcutBadger:1.1.22] /Users/mtpc-99/.gradle/caches/transforms-3/32ec300d06d2392f0578173a0b9a1ae2/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:2:1-52:12
 MERGED from [com.facebook.fresco:fbcore:2.5.0] /Users/mtpc-99/.gradle/caches/transforms-3/3d464bb93d569b006978c63e171f6f2b/transformed/jetified-fbcore-2.5.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/a5996d53a0fdf84a212d6fa5a652fa67/transformed/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/059b61d794378f4d896b20925d6f909b/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
 INJECTED from /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/src/debug/AndroidManifest.xml:2:1-13:12
 INJECTED from /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/src/debug/AndroidManifest.xml:2:1-13:12
 INJECTED from /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/src/debug/AndroidManifest.xml:2:1-13:12
@@ -131,6 +137,8 @@ MERGED from [:react-native-firebase_messaging] /Users/mtpc-99/Documents/MaheshWo
 MERGED from [:react-native-firebase_messaging] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:14:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7c62abacbc6ad9f1ee052b3887f70458/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7c62abacbc6ad9f1ee052b3887f70458/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/4bf46508284e3d611d9650483caf8b17/transformed/jetified-firebase-installations-17.0.0/AndroidManifest.xml:11:5-67
@@ -161,6 +169,8 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/ca
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:26:5-81:19
 MERGED from [com.facebook.soloader:soloader:0.10.1] /Users/mtpc-99/.gradle/caches/transforms-3/4de20cfae3e0fce0fa91b5b09143eb10/transformed/jetified-soloader-0.10.1/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.1] /Users/mtpc-99/.gradle/caches/transforms-3/4de20cfae3e0fce0fa91b5b09143eb10/transformed/jetified-soloader-0.10.1/AndroidManifest.xml:11:5-20
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.android.material:material:1.1.0] /Users/mtpc-99/.gradle/caches/transforms-3/a05d2154a78a0f6c1080ad9094eb345e/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] /Users/mtpc-99/.gradle/caches/transforms-3/a05d2154a78a0f6c1080ad9094eb345e/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7abac15e09d75249418b4a50fedd6b1f/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:27:5-56:19
@@ -175,6 +185,8 @@ MERGED from [com.google.android.gms:play-services-auth:20.1.0] /Users/mtpc-99/.g
 MERGED from [com.google.android.gms:play-services-auth:20.1.0] /Users/mtpc-99/.gradle/caches/transforms-3/cc5470ebe82211de7758a05b1672454c/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/99f0d32f93f04520ed4c90ac958e2963/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/99f0d32f93f04520ed4c90ac958e2963/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/mtpc-99/.gradle/caches/transforms-3/c4091d3daeda5f3157863779e364553b/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:24:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/mtpc-99/.gradle/caches/transforms-3/c4091d3daeda5f3157863779e364553b/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/493a5b32eb8a4a7bb025ee227b7212c1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/493a5b32eb8a4a7bb025ee227b7212c1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/f0c3ab1fef5c026ab0809fb03dc35275/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
@@ -259,6 +271,8 @@ MERGED from [:react-native-async-storage_async-storage] /Users/mtpc-99/Documents
 MERGED from [:react-native-async-storage_async-storage] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_auth] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_auth] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-firebase_firestore] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/firestore/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-firebase_firestore] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/firestore/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_messaging] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_messaging] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_app] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -311,6 +325,10 @@ MERGED from [com.facebook.fresco:nativeimagetranscoder:2.5.0] /Users/mtpc-99/.gr
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.5.0] /Users/mtpc-99/.gradle/caches/transforms-3/08e4d6a8c60a1c064fffb592c93d8922/transformed/jetified-nativeimagetranscoder-2.5.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-base:2.5.0] /Users/mtpc-99/.gradle/caches/transforms-3/f4c9b9beaea438bfa25fc5c9d1063e12/transformed/jetified-imagepipeline-base-2.5.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-base:2.5.0] /Users/mtpc-99/.gradle/caches/transforms-3/f4c9b9beaea438bfa25fc5c9d1063e12/transformed/jetified-imagepipeline-base-2.5.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [io.grpc:grpc-android:1.41.0] /Users/mtpc-99/.gradle/caches/transforms-3/7f6bbcb9b2674d0ba622edde53d04fd0/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml:7:5-9:41
+MERGED from [io.grpc:grpc-android:1.41.0] /Users/mtpc-99/.gradle/caches/transforms-3/7f6bbcb9b2674d0ba622edde53d04fd0/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.material:material:1.1.0] /Users/mtpc-99/.gradle/caches/transforms-3/a05d2154a78a0f6c1080ad9094eb345e/transformed/material-1.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0] /Users/mtpc-99/.gradle/caches/transforms-3/a05d2154a78a0f6c1080ad9094eb345e/transformed/material-1.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.3.0] /Users/mtpc-99/.gradle/caches/transforms-3/0e1fcb0115600141ea6b47249b31c449/transformed/appcompat-1.3.0/AndroidManifest.xml:20:5-22:41
@@ -349,6 +367,10 @@ MERGED from [com.google.android.gms:play-services-auth-base:18.0.1] /Users/mtpc-
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/285fb5e2c3394a4c01cef549c8bd12e1/transformed/jetified-play-services-auth-base-18.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/99f0d32f93f04520ed4c90ac958e2963/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/99f0d32f93f04520ed4c90ac958e2963/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/mtpc-99/.gradle/caches/transforms-3/c4091d3daeda5f3157863779e364553b/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/mtpc-99/.gradle/caches/transforms-3/c4091d3daeda5f3157863779e364553b/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/5fc751c1d68b78ef76689fc6463c5a4b/transformed/jetified-firebase-database-collection-18.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/5fc751c1d68b78ef76689fc6463c5a4b/transformed/jetified-firebase-database-collection-18.0.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/493a5b32eb8a4a7bb025ee227b7212c1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/493a5b32eb8a4a7bb025ee227b7212c1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/f0c3ab1fef5c026ab0809fb03dc35275/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
@@ -441,6 +463,8 @@ MERGED from [com.facebook.fresco:fbcore:2.5.0] /Users/mtpc-99/.gradle/caches/tra
 MERGED from [com.facebook.fresco:fbcore:2.5.0] /Users/mtpc-99/.gradle/caches/transforms-3/3d464bb93d569b006978c63e171f6f2b/transformed/jetified-fbcore-2.5.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/a5996d53a0fdf84a212d6fa5a652fa67/transformed/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/a5996d53a0fdf84a212d6fa5a652fa67/transformed/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/059b61d794378f4d896b20925d6f909b/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/059b61d794378f4d896b20925d6f909b/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
 INJECTED from /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/src/debug/AndroidManifest.xml
 INJECTED from /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
@@ -477,6 +501,10 @@ MERGED from [:react-native-firebase_messaging] /Users/mtpc-99/Documents/MaheshWo
 MERGED from [:react-native-firebase_messaging] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:13:5-79
+MERGED from [io.grpc:grpc-android:1.41.0] /Users/mtpc-99/.gradle/caches/transforms-3/7f6bbcb9b2674d0ba622edde53d04fd0/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml:11:5-79
+MERGED from [io.grpc:grpc-android:1.41.0] /Users/mtpc-99/.gradle/caches/transforms-3/7f6bbcb9b2674d0ba622edde53d04fd0/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml:11:5-79
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7abac15e09d75249418b4a50fedd6b1f/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7abac15e09d75249418b4a50fedd6b1f/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:22:5-79
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7c62abacbc6ad9f1ee052b3887f70458/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:25:5-79
@@ -547,6 +575,8 @@ service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:react-native-firebase_app] /Users/mtpc-99/Documents/MaheshWork/ReactNative/Tasky/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-18:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7abac15e09d75249418b4a50fedd6b1f/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:49:9-55:19
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7abac15e09d75249418b4a50fedd6b1f/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:49:9-55:19
 MERGED from [com.google.firebase:firebase-datatransport:18.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/9cd9feedb6f9c00b7de7ff036a2c03e6/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:25:9-31:19
@@ -647,6 +677,12 @@ ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/cac
 		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/27e5d3fe8a99b73544f8f1d603f2535f/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.0.1] /Users/mtpc-99/.gradle/caches/transforms-3/fba52833bfd1787222202d72bbb83d44/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:21:17-111
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from [com.google.firebase:firebase-messaging:23.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/7abac15e09d75249418b4a50fedd6b1f/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:25:5-82
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.0] /Users/mtpc-99/.gradle/caches/transforms-3/c881e54a4cec1e994327bc218ffe0dc9/transformed/jetified-play-services-cloud-messaging-17.0.0/AndroidManifest.xml:11:5-82

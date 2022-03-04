@@ -17,6 +17,8 @@ import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 // @react-native-firebase/auth
 import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
+// @react-native-firebase/firestore
+import io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage;
 // @react-native-firebase/messaging
 import io.invertase.firebase.messaging.ReactNativeFirebaseMessagingPackage;
 // react-native-push-notification
@@ -73,6 +75,7 @@ public class PackageList {
       new AsyncStoragePackage(),
       new ReactNativeFirebaseAppPackage(),
       new ReactNativeFirebaseAuthPackage(),
+      new ReactNativeFirebaseFirestorePackage(),
       new ReactNativeFirebaseMessagingPackage(),
       new ReactNativePushNotificationPackage(),
       new SafeAreaContextPackage(),
