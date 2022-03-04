@@ -13,6 +13,8 @@ import UITextField from "../../components/UITextField";
 import UISecureTextField from "../../components/UISecureTextField";
 import UIButton from "../../components/UIButton";
 import { Color } from "../../utils/Colors";
+import LoaderView from "../../components/LoaderView";
+import auth from "@react-native-firebase/auth";
 
 export default class LoginView extends Component {
   constructor(props) {
@@ -22,6 +24,7 @@ export default class LoginView extends Component {
       password: "",
       errorEmail: "",
       errorPass: "",
+      isLoading: false,
     };
   }
 
@@ -29,13 +32,14 @@ export default class LoginView extends Component {
     var passwordReg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
     if (this.state.password.length < 6) {
       this.setState({ errorPass: "Please enter Valid Password" });
-      return;
+      return false;
     }
     if (passwordReg.test(this.state.password) === false) {
       this.setState({ errorPass: "Please enter Valid Password" });
-      return;
+      return false;
     } else {
       this.setState({ errorPass: "" });
+      return true;
     }
   }
 
@@ -43,13 +47,30 @@ export default class LoginView extends Component {
     let emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
     if (this.state.email.length < 6) {
       this.setState({ errorEmail: "Please enter Valid Email" });
-      return;
+      return false;
     }
     if (emailReg.test(this.state.email) === false) {
       this.setState({ errorEmail: "Please enter Valid Email" });
-      return;
+      return false;
     } else {
       this.setState({ errorEmail: "" });
+      return true;
+    }
+  }
+
+  authUser() {
+    if (this.validateEmail() && this.validatePassword()) {
+      this.setState({ isLoading: true });
+      auth()
+        .signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then(() => {
+          this.setState({ isLoading: false });
+          this.props.navigation.navigate('Home');
+        })
+        .catch((error) => {
+          this.setState({ isLoading: false });
+          alert(error.message);
+        });
     }
   }
 
@@ -63,6 +84,7 @@ export default class LoginView extends Component {
         />
         <ScrollView>
           <View style={styles.container}>
+            <LoaderView loading={this.state.isLoading} />
             <Image
               style={styles.tinyLogo}
               source={{
@@ -108,10 +130,13 @@ export default class LoginView extends Component {
                 <Text>Forgot your password?</Text>
               </TouchableOpacity>
             </View>
-            <UIButton isEnabled="false" title="Login" onTapBtn={() => {
-              this.validateEmail();
-              this.validatePassword();
-            }} />
+            <UIButton
+              isEnabled="false"
+              title="Login"
+              onTapBtn={() => {
+                this.authUser();
+              }}
+            />
             <Text style={{ paddingTop: 16 }}>OR</Text>
             <View style={{ flexDirection: "row" }}>
               <TouchableOpacity style={styles.icon}>
