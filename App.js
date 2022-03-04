@@ -8,6 +8,7 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeView from "./src/modules/Home/homeView";
 import LoginView from "./src/modules/Login/LoginView";
+import { initializeApp } from 'firebase/app';
 
 const Stack = createNativeStackNavigator();
 

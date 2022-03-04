@@ -88,7 +88,6 @@ export default class LoginView extends Component {
             </Text>
             <UISecureTextField
               placeholder="Password"
-              isSecureText={true}
               onChangeText={(value) => {
                 this.setState({ password: value });
                 this.validatePassword();
