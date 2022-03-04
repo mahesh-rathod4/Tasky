@@ -13,8 +13,10 @@ import UITextField from "../../components/UITextField";
 import UISecureTextField from "../../components/UISecureTextField";
 import UIButton from "../../components/UIButton";
 import { Color } from "../../utils/Colors";
+import { Constant } from "../../utils/Constants";
 import LoaderView from "../../components/LoaderView";
 import auth from "@react-native-firebase/auth";
+import firestore from "@react-native-firebase/firestore";
 
 export default class LoginView extends Component {
   constructor(props) {
@@ -63,32 +65,47 @@ export default class LoginView extends Component {
       this.setState({ isLoading: true });
       //signInWithEmailAndPassword
       auth()
-        .signInWithEmailAndPassword(this.state.email, this.state.password)
+        .createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then(() => {
+          this.createUser();
           this.setState({ isLoading: false });
-          this.props.navigation.navigate('Home');
+          this.props.navigation.navigate("Home");
         })
         .catch((error) => {
           this.setState({ isLoading: false });
-          switch(error.code) {
-            case 'auth/wrong-password':
-              alert('Your password is incorrect');
+          switch (error.code) {
+            case "auth/wrong-password":
+              alert("Your password is incorrect");
               break;
-            case 'auth/user-not-found':
-              alert('User not found');
+            case "auth/user-not-found":
+              alert("User not found");
               break;
-            case 'auth/email-already-in-use':
-              alert('That email address is already in use!');
+            case "auth/email-already-in-use":
+              alert("That email address is already in use!");
               break;
-            case 'auth/invalid-email':
-              alert('That email address is invalid!');
+            case "auth/invalid-email":
+              alert("That email address is invalid!");
               break;
             default:
-              alert(error.code);
+              alert(error);
               break;
           }
         });
     }
+  }
+
+  createUser() {
+    const uid = auth().currentUser.uid;
+    const usersCollection = firestore().collection("Users");
+    usersCollection
+      .doc(uid)
+      .set({
+        email: auth().currentUser.email,
+        isEnabledPush: true,
+      })
+      .then(() => {
+        console.log("User added!");
+      });
   }
 
   render() {
