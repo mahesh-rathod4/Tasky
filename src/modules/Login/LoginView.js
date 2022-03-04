@@ -61,6 +61,7 @@ export default class LoginView extends Component {
   authUser() {
     if (this.validateEmail() && this.validatePassword()) {
       this.setState({ isLoading: true });
+      //signInWithEmailAndPassword
       auth()
         .signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(() => {
@@ -69,7 +70,23 @@ export default class LoginView extends Component {
         })
         .catch((error) => {
           this.setState({ isLoading: false });
-          alert(error.message);
+          switch(error.code) {
+            case 'auth/wrong-password':
+              alert('Your password is incorrect');
+              break;
+            case 'auth/user-not-found':
+              alert('User not found');
+              break;
+            case 'auth/email-already-in-use':
+              alert('That email address is already in use!');
+              break;
+            case 'auth/invalid-email':
+              alert('That email address is invalid!');
+              break;
+            default:
+              alert(error.code);
+              break;
+          }
         });
     }
   }

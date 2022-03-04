@@ -8,7 +8,7 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeView from "./src/modules/Home/homeView";
 import LoginView from "./src/modules/Login/LoginView";
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,11 @@ function App() {
   return (
     <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Home" component={HomeView} />
+        <Stack.Screen
+          name="Home"
+          component={HomeView}
+          options={{ title: "Tasky" }}
+        />
         <Stack.Screen
           name="Login"
           component={LoginView}
