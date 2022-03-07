@@ -2,22 +2,48 @@ import { Text, StyleSheet, View } from "react-native";
 import React, { Component } from "react";
 import UserListItem from "./ListItems/UserListItem";
 import firestore from "@react-native-firebase/firestore";
-import {connect} from 'react-redux';
-import {loadUsers} from '../NewChat/action';
+// import {loadUsers} from '../NewChat/action';
 
 
- class NewChatView extends Component {
-  componentDidMount() {
-    loadUsers();
+ export default class NewChatView extends Component {
+
+
+  constructor() {
+    super();
+    this.docs = firestore().collection("Users")
+    this.state = {
+      isLoading: false,
+      users :[]
+    }
   }
 
-  // async getUser() {
-  //   const users = await firestore()
-  //     .collection("Users")
-  //     .get()
-  //     const doc = users.docs.map(doc => doc.data());
-  //   console.log(doc);
-  // }
+
+  componentDidMount() {
+    this.unsubscribe = this.docs.onSnapshot(this.fetchUsers);
+  }
+
+  fetchUsers =  (querySnapshot) => {
+    const users = [];
+    querySnapshot.forEach((userDoc) => {
+      const {email,isEnabledPush} = userDoc.data();
+      users.push({'email':email,'isEnabledPush':isEnabledPush,'isSelect':false});
+    })
+    console.log(users)
+  }
+
+
+   async getUser() {
+    // await firestore()
+    //   .collection("Users")
+    //   .get()
+    //   .then(snapshot => {
+    //     snapshot
+    //       .docs
+    //       .forEach(doc => {
+    //         console.log(JSON.parse(doc._document.data.toString()))
+    //       });
+    //   });
+  }
 
   render() {
     return (
@@ -30,14 +56,3 @@ import {loadUsers} from '../NewChat/action';
 
 const styles = StyleSheet.create({});
 
-const mapStateToProps = state => ({
-  data: state.getUserReducer.data,
-  loading: state.getUserReducer.loading,
-  error: state.getUserReducer.error,
-});
-
-const mapDispatchToProps = dispatch => ({
- 
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(NewChatView);

@@ -20,6 +20,7 @@ import {
         };
       }
       case LOAD_USERS_SUCCESS: {
+        console.log(action);
         return {
           ...state,
           data: action.data,

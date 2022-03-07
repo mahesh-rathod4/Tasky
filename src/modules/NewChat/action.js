@@ -5,3 +5,7 @@ export const LOAD_USERS_ERROR = 'LOAD_USERS_ERROR';
 export const loadUsers = () => dispatch => {
   dispatch({type: LOAD_USERS_LOADING});
 };
+
+export const fetchUsers = () => {
+  
+}
