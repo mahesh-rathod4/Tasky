@@ -17,6 +17,7 @@ import { Constant } from "../../utils/Constants";
 import LoaderView from "../../components/LoaderView";
 import auth from "@react-native-firebase/auth";
 import firestore from "@react-native-firebase/firestore";
+import UserModel from "../../models/UserModel";
 
 export default class LoginView extends Component {
   constructor(props) {
@@ -97,12 +98,11 @@ export default class LoginView extends Component {
   createUser() {
     const uid = auth().currentUser.uid;
     const usersCollection = firestore().collection("Users");
+    const groups = {};
+    const userModel = new UserModel(uid, auth().currentUser.email, groups);
     usersCollection
       .doc(uid)
-      .set({
-        email: auth().currentUser.email,
-        isEnabledPush: true,
-      })
+      .set(userModel)
       .then(() => {
         console.log("User added!");
       });

@@ -56,7 +56,13 @@ export default class HomeView extends Component {
       <View style={styles.container}>
         <FlatList
           data={this.state.groups}
-          renderItem={({ item, index }) => <GroupListItem />}
+          renderItem={({ item, index }) => (
+            <GroupListItem
+              onTapItem={() => {
+                this.props.navigation.navigate("Chat");
+              }}
+            />
+          )}
         />
         <UIButton
           isEnabled="true"

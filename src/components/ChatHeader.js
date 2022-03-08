@@ -9,7 +9,9 @@ export default class ChatHeader extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={this.props.onTapBtnBack}
+        >
           <View style={styles.container}>
             <Image
               style={{ width: 20, height: 20, marginStart: 16, marginEnd: 4 }}
@@ -38,5 +40,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
+    paddingTop: 8,
   },
 });

@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     marginEnd: 50,
   },
   message: {
-    marginVertical: 16,
+    marginVertical: 8,
     marginStart: 16,
     width: "80%",
   },

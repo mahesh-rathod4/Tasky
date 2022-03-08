@@ -3,9 +3,13 @@ import React, { Component } from "react";
 import { Color } from "../../../utils/Colors";
 
 export default class GroupListItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onTapItem}>
         <View style={styles.container}>
           <View style={{ flexDirection: "row" }}>
             <Image
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   title: {
-    fontSize: 12,
+    fontSize: 11,
     paddingVertical: 2,
     color: Color.primary,
   },

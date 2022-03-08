@@ -20,7 +20,13 @@ export default class ChatView extends Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={styles.container}>
-          <ChatHeader email={"maheshr8484@gmail.com"} users={"users"} />
+          <ChatHeader
+            email={"maheshr8484@gmail.com"}
+            users={"users"}
+            onTapBtnBack={() => {
+              this.props.navigation.goBack();
+            }}
+          />
           <FlatList
             data={this.state.messages}
             renderItem={({ item, index }) => <Text>g</Text>}
