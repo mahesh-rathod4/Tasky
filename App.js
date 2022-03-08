@@ -6,7 +6,7 @@ import {
   DarkTheme,
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeView from "./src/modules/Home/homeView";
+import HomeView from "./src/modules/Home/HomeView";
 import LoginView from "./src/modules/Login/LoginView";
 import NewChatView from "./src/modules/NewChat/NewChatView";
 import { initializeApp } from "firebase/app";
@@ -17,7 +17,7 @@ function App() {
   const scheme = useColorScheme();
   return (
     <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack.Navigator initialRouteName="Chat">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={HomeView}

@@ -1,8 +1,7 @@
-
 class MessageModel {
-  constructor(message, date,id) {
+  constructor(id, message,date) {
+    this.id = id;
     this.message = message;
     this.date = date;
-    this.id = id;
   }
 }

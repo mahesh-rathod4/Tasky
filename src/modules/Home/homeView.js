@@ -3,8 +3,16 @@ import React, { Component } from "react";
 import messaging from "@react-native-firebase/messaging";
 import PushNotificationIOS from "@react-native-community/push-notification-ios";
 import PushNotification from "react-native-push-notification";
+import GroupListItem from "./ListItems/GroupListItem";
 
 export default class HomeView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      groups: [],
+    };
+  }
+
   componentDidMount() {
     this.getToken();
     PushNotification.configure({
@@ -43,11 +51,7 @@ export default class HomeView extends Component {
   };
 
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>HomeView</Text>
-      </View>
-    );
+    return <View style={styles.container}></View>;
   }
 }
 
