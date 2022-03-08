@@ -17,17 +17,24 @@ export default class LeftChatBubble extends Component {
           Mahesh Rathod
         </Text>
         <View style={styles.mssageTime}>
-          <Text style = {{width: '75%',paddingTop:4}} >bhglbdgldfbglsdfghlnfhlngnh;fghd;jpodghijpogxfhpofgjiopjydo</Text>
-          <Text
-            style={{
-              color: Color.subtitle,
-              paddingEnd:8,
-              paddingTop: 8,
-              fontSize: 12,
-            }}
-          >
-            8.20 Pm
+          <Text style={{ width: "75%", paddingTop: 4 }}>
+            bhglbdgldfbglsdfghlnfhlngnh;fghd;jpodghijpogxfhpofgjiopjydo
           </Text>
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text />
+            <Text
+              style={{
+                color: Color.subtitle,
+                paddingEnd: 8,
+                paddingTop: 8,
+                fontSize: 12,
+              }}
+            >
+              8.20 Pm
+            </Text>
+          </View>
         </View>
       </View>
     );
@@ -47,7 +54,7 @@ const styles = StyleSheet.create({
   mssageTime: {
     paddingHorizontal: 8,
     paddingBottom: 8,
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "space-between",
   },
 });

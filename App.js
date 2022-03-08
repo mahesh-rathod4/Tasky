@@ -10,14 +10,14 @@ import HomeView from "./src/modules/Home/homeView";
 import LoginView from "./src/modules/Login/LoginView";
 import NewChatView from "./src/modules/NewChat/NewChatView";
 import { initializeApp } from "firebase/app";
-
+import ChatView from "./src/modules/Chat/ChatView";
 const Stack = createNativeStackNavigator();
 
 function App() {
   const scheme = useColorScheme();
   return (
     <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack.Navigator initialRouteName="NewChat">
+      <Stack.Navigator initialRouteName="Chat">
         <Stack.Screen
           name="Home"
           component={HomeView}
@@ -26,6 +26,11 @@ function App() {
         <Stack.Screen
           name="Login"
           component={LoginView}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Chat"
+          component={ChatView}
           options={{ headerShown: false }}
         />
         <Stack.Screen

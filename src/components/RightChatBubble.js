@@ -5,21 +5,29 @@ import { Color } from "../utils/Colors";
 export default class RightChatBubble extends Component {
   render() {
     return (
-      <View style={{ flexDirection: "row",justifyContent: "space-between"}}>
-        <Text/>
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <Text />
         <View style={styles.bubble}>
           <View style={styles.mssageTime}>
             <Text style={{ paddingVertical: 8 }}>Message</Text>
-            <Text
+            <View
               style={{
-                color: Color.subtitle,
-                paddingHorizontal: 8,
-                paddingTop: 8,
-                fontSize: 12,
+                flexDirection: "row",
+                justifyContent: "space-between",
               }}
             >
-              8.20 Pm
-            </Text>
+              <Text/>
+              <Text
+                style={{
+                  color: Color.subtitle,
+                  paddingHorizontal: 8,
+                  paddingTop: 8,
+                  fontSize: 12,
+                }}
+              >
+                8.20 Pm
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -35,12 +43,12 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 16,
     borderTopRightRadius: 0,
     borderTopLeftRadius: 16,
-    backgroundColor: Color.lightDimm,
+    backgroundColor: Color.itemLightBG,
   },
   mssageTime: {
     paddingHorizontal: 8,
     paddingBottom: 8,
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "space-between",
   },
 });
