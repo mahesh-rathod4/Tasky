@@ -4,6 +4,8 @@ import UserListItem from "./ListItems/UserListItem";
 import firestore from "@react-native-firebase/firestore";
 import auth from "@react-native-firebase/auth";
 import UIButton from "../../components/UIButton";
+import LoaderView from "../../components/LoaderView";
+import UITextField from "../../components/UITextField";
 
 export default class NewChatView extends Component {
   constructor() {
@@ -12,6 +14,7 @@ export default class NewChatView extends Component {
     this.state = {
       isLoading: false,
       users: [],
+      name: "",
     };
   }
 
@@ -20,7 +23,7 @@ export default class NewChatView extends Component {
   }
 
   fetchUsers = (querySnapshot) => {
-    this.setState({ isLoading: false });
+    this.setState({ isLoading: true });
     const users = [];
     const cID = auth().currentUser.uid;
     querySnapshot.forEach((userDoc) => {
@@ -36,9 +39,21 @@ export default class NewChatView extends Component {
     this.setState({ users: users, isLoading: false });
   };
 
+  onTabBtnCreateNow() {
+    
+  }
+
   render() {
     return (
       <View style={styles.container}>
+        <LoaderView loading={this.state.isLoading} />
+        <UITextField
+          placeholder="Name"
+          onChangeText={(value) => {
+            this.setState({ name: value });
+          }}
+        />
+        <Text style={{ paddingHorizontal: 16 }}>Select Members</Text>
         <FlatList
           data={this.state.users}
           renderItem={({ item, index }) => (
@@ -55,10 +70,10 @@ export default class NewChatView extends Component {
         />
         <UIButton
           isEnabled="true"
-          title="Create Group"
-          onTapBtn={() => {
-            
-          }}
+          title="Create Now"
+          onTapBtn={
+            this.onTabBtnCreateNow
+          }
         />
       </View>
     );
@@ -68,6 +83,6 @@ export default class NewChatView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom:40,
+    marginBottom: 40,
   },
 });

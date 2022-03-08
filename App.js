@@ -36,7 +36,7 @@ function App() {
         <Stack.Screen
           name="NewChat"
           component={NewChatView}
-          options={{ headerShown: true, title: "New Messgae" }}
+          options={{ headerShown: true, title: "Select User" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

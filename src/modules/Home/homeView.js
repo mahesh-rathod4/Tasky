@@ -1,15 +1,16 @@
-import { Text, StyleSheet, View, AsyncStorage } from "react-native";
+import { Text, StyleSheet, View, FlatList } from "react-native";
 import React, { Component } from "react";
 import messaging from "@react-native-firebase/messaging";
 import PushNotificationIOS from "@react-native-community/push-notification-ios";
 import PushNotification from "react-native-push-notification";
+import UIButton from "../../components/UIButton";
 import GroupListItem from "./ListItems/GroupListItem";
 
 export default class HomeView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      groups: [],
+      groups: ["tx", "f"],
     };
   }
 
@@ -51,7 +52,21 @@ export default class HomeView extends Component {
   };
 
   render() {
-    return <View style={styles.container}></View>;
+    return (
+      <View style={styles.container}>
+        <FlatList
+          data={this.state.groups}
+          renderItem={({ item, index }) => <GroupListItem />}
+        />
+        <UIButton
+          isEnabled="true"
+          title="Create Group"
+          onTapBtn={() => {
+            this.props.navigation.navigate("NewChat");
+          }}
+        />
+      </View>
+    );
   }
 }
 
@@ -59,6 +74,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
+    paddingBottom: 40,
   },
 });
