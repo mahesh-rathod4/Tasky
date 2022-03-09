@@ -7,6 +7,11 @@ export default class GroupListItem extends Component {
     super(props);
   }
 
+   getTime(){
+    const date = this.props.lastMsgTime;
+    return date.toDate().toDateString()
+  }
+
   render() {
     return (
       <TouchableOpacity onPress={this.props.onTapItem}>
@@ -24,8 +29,10 @@ export default class GroupListItem extends Component {
                 padding: 8,
               }}
             >
-              <Text>Group Name</Text>
-              <Text>Last Message</Text>
+              <Text>{this.props.name}</Text>
+              <Text style={{ color: Color.subtitle }}>
+                {this.props.lastMsg}
+              </Text>
             </View>
           </View>
           <View
@@ -34,10 +41,16 @@ export default class GroupListItem extends Component {
               alignItems: "flex-end",
             }}
           >
-            <Text style={styles.title}>4:40 PM</Text>
-            <View style={styles.messageCount}>
-              <Text style={{ color: "white", fontSize: 10 }}>1</Text>
-            </View>
+            <Text style={styles.title}>{this.getTime()}</Text>
+            {this.props.messageCount == 0 ? (
+              <View style={styles.messageCount}>
+                <Text style={{ color: "white", fontSize: 10 }}>
+                  {this.props.msgCount}
+                </Text>
+              </View>
+            ) : (
+              <Text />
+            )}
           </View>
         </View>
       </TouchableOpacity>

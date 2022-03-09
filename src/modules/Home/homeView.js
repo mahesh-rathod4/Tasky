@@ -5,17 +5,21 @@ import PushNotificationIOS from "@react-native-community/push-notification-ios";
 import PushNotification from "react-native-push-notification";
 import UIButton from "../../components/UIButton";
 import GroupListItem from "./ListItems/GroupListItem";
+import firestore from "@react-native-firebase/firestore";
+import GroupResponseModel from "../../models/GroupResponseModel";
 
 export default class HomeView extends Component {
   constructor(props) {
     super(props);
+    this.groups = firestore().collection("Group");
     this.state = {
-      groups: ["tx", "f"],
+      groups: [],
     };
   }
 
   componentDidMount() {
     this.getToken();
+    this.unsubscribe = this.groups.onSnapshot(this.fetchGroups);
     PushNotification.configure({
       onRegister: function (token) {
         console.log("TOKEN:", token);
@@ -42,6 +46,33 @@ export default class HomeView extends Component {
     });
   }
 
+  fetchGroups = (querySnapshot) => {
+    const responseGroups = [];
+    this.setState({ isLoading: true });
+    querySnapshot.forEach((groupDoc) => {
+      const {
+        groupName,
+        id,
+        lastMsgTime,
+        createAt,
+        createBy,
+        members,
+        recentMsg,
+      } = groupDoc.data();
+      const groupResponseModel = new GroupResponseModel(
+        createAt,
+        createBy,
+        id,
+        members,
+        groupName,
+        recentMsg,
+        lastMsgTime
+      );
+      responseGroups.push(groupResponseModel);
+    });
+    this.setState({ groups: responseGroups });
+  };
+
   getToken = async () => {
     try {
       const token = await messaging().getToken();
@@ -58,6 +89,10 @@ export default class HomeView extends Component {
           data={this.state.groups}
           renderItem={({ item, index }) => (
             <GroupListItem
+              name={item.groupName}
+              lastMsg={item.recentMsg}
+              lastMsgTime={item.lastMsgTime}
+              msgCount={0}
               onTapItem={() => {
                 this.props.navigation.navigate("Chat");
               }}
