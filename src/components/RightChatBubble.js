@@ -9,11 +9,12 @@ export default class RightChatBubble extends Component {
         <Text />
         <View style={styles.bubble}>
           <View style={styles.mssageTime}>
-            <Text style={{ paddingVertical: 8 }}>Message</Text>
+            <Text style={{ paddingVertical: 8,color:Color.title }}>Message</Text>
             <View
               style={{
                 flexDirection: "row",
                 justifyContent: "space-between",
+                
               }}
             >
               <Text/>
@@ -37,7 +38,8 @@ export default class RightChatBubble extends Component {
 
 const styles = StyleSheet.create({
   bubble: {
-    margin: 16,
+    marginHorizontal:16,
+    marginVertical: 8,
     width: "80%",
     borderBottomRightRadius: 16,
     borderBottomLeftRadius: 16,

@@ -1,14 +1,13 @@
+
 const initialState = {
-  name: "",
-  members: [],
+  group: {}
 };
 
 function saveGroupReducer(state = initialState, action) {
-    console.log(action);
     switch (action.type) {
       case 'SAVE_GROUP_DETAIL':
-          console.log(action);
-        return {...state, group: action.group};
+          console.log(action.payload.group);
+        return {...state, group: action.payload.group};
       default:
         return state;
     }

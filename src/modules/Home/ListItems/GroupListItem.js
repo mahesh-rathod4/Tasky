@@ -29,7 +29,7 @@ export default class GroupListItem extends Component {
                 padding: 8,
               }}
             >
-              <Text>{this.props.name}</Text>
+              <Text style = {{color:Color.title}} >{this.props.name}</Text>
               <Text style={{ color: Color.subtitle }}>
                 {this.props.lastMsg}
               </Text>

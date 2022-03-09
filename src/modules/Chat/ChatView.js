@@ -10,18 +10,29 @@ export default class ChatView extends Component {
     super(props);
     this.state = {
       isLoading: false,
-      messages: [],
+      messages: [0, 1, 1, 0, 0, 0, 1, 1, 0],
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(this.props.group);
+  }
+
+  renderItem = ({ item }) => {
+    if (item == 0) {
+      return <LeftChatBubble />;
+    }
+    {
+      return <RightChatBubble />;
+    }
+  };
 
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={styles.container}>
           <ChatHeader
-            email={"maheshr8484@gmail.com"}
+            email={"j"}
             users={"users"}
             onTapBtnBack={() => {
               this.props.navigation.goBack();
@@ -29,7 +40,7 @@ export default class ChatView extends Component {
           />
           <FlatList
             data={this.state.messages}
-            renderItem={({ item, index }) => <Text>g</Text>}
+            renderItem={this.renderItem}
             keyExtractor={(item) => item.id}
           />
           <SendBox />

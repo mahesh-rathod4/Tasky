@@ -17,8 +17,8 @@ export default class LeftChatBubble extends Component {
           Mahesh Rathod
         </Text>
         <View style={styles.mssageTime}>
-          <Text style={{ width: "75%", paddingTop: 4 }}>
-            bhglbdgldfbglsdfghlnfhlngnh;fghd;jpodghijpogxfhpofgjiopjydo
+          <Text style={{ width: "75%", paddingTop: 4 ,color:Color.title}}>
+            Message
           </Text>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
@@ -43,7 +43,8 @@ export default class LeftChatBubble extends Component {
 
 const styles = StyleSheet.create({
   bubble: {
-    margin: 16,
+    marginHorizontal:16,
+    marginVertical: 8,
     width: "80%",
     borderBottomRightRadius: 16,
     borderBottomLeftRadius: 16,
