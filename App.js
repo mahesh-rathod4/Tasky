@@ -17,7 +17,7 @@ function App() {
   const scheme = useColorScheme();
   return (
     <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={HomeView}

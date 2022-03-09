@@ -17,6 +17,7 @@ export default class NewChatView extends Component {
       isLoading: false,
       users: [],
       name: "",
+      currentUserData: {},
     };
   }
 
@@ -29,53 +30,83 @@ export default class NewChatView extends Component {
     const users = [];
     const cID = auth().currentUser.uid;
     querySnapshot.forEach((userDoc) => {
-      const { email, id } = userDoc.data();
+      const { email, id, groups } = userDoc.data();
       if (cID != userDoc.id) {
         users.push({
           email: email,
           id: id,
+          group: groups,
+        });
+      } else {
+        this.setState({
+          currentUserData: {
+            email: email,
+            id: id,
+            group: groups,
+          },
         });
       }
     });
     this.setState({ users: users, isLoading: false });
   };
 
+  createGroupOnSender(id) {
+    const groups = this.state.currentUserData.group;
+    groups.push(id);
+    const usersCollection = firestore().collection("Users");
+    usersCollection
+      .doc(this.state.currentUserData.id)
+      .update({
+        groups: groups,
+      })
+      .then(() => {
+        console.log("Group added on all current user");
+        this.props.navigation.goBack();
+      });
+  }
+
+  createGroupOnReceiver(id, selectedUsers) {
+    selectedUsers.forEach((user) => {
+      const groups = user.group;
+      groups.push(id);
+      const usersCollection = firestore().collection("Users");
+      usersCollection
+        .doc(user.id)
+        .update({
+          groups: groups,
+        })
+        .then(() => {
+          console.log("Group added on all members");
+        });
+    });
+  }
+
   onTabBtnCreateNow() {
     if (this.state.name == "") {
       alert("Enter valid group name");
     } else {
-      const selectedUsers = this.state.users
-        .filter((user) => user.isSelect)
-        .map((user) => user.id);
+      const selectedUsers = this.state.users.filter((user) => user.isSelect);
       if (selectedUsers.length < 0) {
         alert("At list select one user");
       } else {
-        console.log(selectedUsers);
+        const groupCollection = firestore().collection("Group");
+        const id = makeId(8);
+        const ids = selectedUsers.map((user) => user.id);
+        const group = new GroupModel(
+          new Date(),
+          auth().currentUser.uid,
+          id,
+          ids,
+          this.state.name
+        );
+        groupCollection
+          .doc(id)
+          .set(group)
+          .then(() => {
+            this.createGroupOnSender(id);
+            this.createGroupOnReceiver(id, selectedUsers);
+          });
       }
-      const groupCollection = firestore().collection("Group");
-      const id = makeId(8);
-      const group = new GroupModel(
-        new Date(),
-        auth().currentUser.uid,
-        id,
-        selectedUsers,
-        this.state.name
-      );
-      groupCollection
-        .doc(id)
-        .set(group)
-        .then(() => {
-          const usersCollection = firestore().collection("Users");
-          usersCollection
-            .doc(auth().currentUser.uid)
-            .update({
-              groups: { id },
-            })
-            .then(() => {
-              console.log("User updated!");
-            });
-          this.props.navigation.goBack();
-        });
     }
   }
 

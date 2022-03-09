@@ -98,7 +98,7 @@ export default class LoginView extends Component {
   createUser() {
     const uid = auth().currentUser.uid;
     const usersCollection = firestore().collection("Users");
-    const groups = {};
+    const groups = [];
     const userModel = new UserModel(uid, auth().currentUser.email, groups);
     usersCollection
       .doc(uid)
