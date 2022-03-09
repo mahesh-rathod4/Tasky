@@ -7,13 +7,17 @@ import UIButton from "../../components/UIButton";
 import GroupListItem from "./ListItems/GroupListItem";
 import firestore from "@react-native-firebase/firestore";
 import GroupResponseModel from "../../models/GroupResponseModel";
+import LoaderView from "../../components/LoaderView";
+import { connect } from "react-redux";
+import saveGroup from "./actions";
 
-export default class HomeView extends Component {
+class HomeView extends Component {
   constructor(props) {
     super(props);
     this.groups = firestore().collection("Group");
     this.state = {
       groups: [],
+      isLoading: false,
     };
   }
 
@@ -70,7 +74,7 @@ export default class HomeView extends Component {
       );
       responseGroups.push(groupResponseModel);
     });
-    this.setState({ groups: responseGroups });
+    this.setState({ groups: responseGroups, isLoading: false });
   };
 
   getToken = async () => {
@@ -82,9 +86,15 @@ export default class HomeView extends Component {
     }
   };
 
+  onTapItem(item, index) {
+    this.props.saveGroupReducer(item);
+    this.props.navigation.navigate("Chat");
+  }
+
   render() {
     return (
       <View style={styles.container}>
+        <LoaderView loading={this.state.isLoading} />
         <FlatList
           data={this.state.groups}
           renderItem={({ item, index }) => (
@@ -94,7 +104,7 @@ export default class HomeView extends Component {
               lastMsgTime={item.lastMsgTime}
               msgCount={0}
               onTapItem={() => {
-                this.props.navigation.navigate("Chat");
+                this.onTapItem(item, index);
               }}
             />
           )}
@@ -118,3 +128,13 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
 });
+
+const mapStateToProps = (state) => ({
+  group: state.saveGroupReducer.group,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  saveGroupReducer: (group) => dispatch(saveGroup(group)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeView);
