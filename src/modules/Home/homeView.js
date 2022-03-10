@@ -10,11 +10,14 @@ import GroupResponseModel from "../../models/GroupResponseModel";
 import LoaderView from "../../components/LoaderView";
 import { connect } from "react-redux";
 import saveGroup from "./actions";
+import auth from "@react-native-firebase/auth";
 
 class HomeView extends Component {
   constructor(props) {
     super(props);
-    this.groups = firestore().collection("Group");
+    this.groups = firestore()
+      .collection("Group")
+      .where("members", "array-contains", auth().currentUser.uid);
     this.state = {
       groups: [],
       isLoading: false,
@@ -23,7 +26,8 @@ class HomeView extends Component {
 
   componentDidMount() {
     this.getToken();
-    this.unsubscribe = this.groups.onSnapshot(this.fetchGroups);
+    this.unsubscribe = this.groups
+      .onSnapshot(this.fetchGroups)
     PushNotification.configure({
       onRegister: function (token) {
         console.log("TOKEN:", token);
@@ -103,7 +107,7 @@ class HomeView extends Component {
             <GroupListItem
               name={item.groupName}
               lastMsg={item.recentMsg}
-              lastMsgTime={item.lastMsgTime}
+              lastMsgTime={item.createAt}
               msgCount={0}
               onTapItem={() => {
                 this.onTapItem(item, index);

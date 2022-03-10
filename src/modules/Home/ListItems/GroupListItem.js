@@ -9,6 +9,7 @@ export default class GroupListItem extends Component {
 
    getTime(){
     const date = this.props.lastMsgTime;
+    
     return date.toDate().toDateString()
   }
 

@@ -14,6 +14,11 @@ import utils from "../../utils/Utils";
 class ChatView extends Component {
   constructor(props) {
     super(props);
+    this.docs = firestore()
+      .collection("messages")
+      .doc(this.props.group.id)
+      .collection("messages")
+      .orderBy("date", "asc");
     this.state = {
       isLoading: false,
       messages: [],
@@ -22,9 +27,22 @@ class ChatView extends Component {
   }
 
   componentDidMount() {
-    if (this.props.group != undefined) {
-    }
+    console.log("CurrentUserID", auth().currentUser.uid);
+    this.unsubscribe = this.docs.onSnapshot(this.fetchMsgs);
   }
+
+  componentWillUnmount() {}
+
+  fetchMsgs = (querySnapshot) => {
+    const ar = [];
+    querySnapshot.forEach((msgDoc) => {
+      console.log(msgDoc.data());
+      const { id, message, date, name } = msgDoc.data();
+      const messageModel = new MessageModel(id, message, date.toDate(), name);
+      ar.push(messageModel);
+    });
+    this.setState({ messages: ar });
+  };
 
   sendMessage() {
     const authId = auth().currentUser.uid;
@@ -37,19 +55,20 @@ class ChatView extends Component {
     );
     const messages = this.state.messages;
     messages.push(messageModel);
-    messages.reverse();
+    //messages.reverse();
     this.setState({ messages: messages });
-    // const usersCollection = firestore().collection("messages");
-    // usersCollection
-    //   .doc(this.props.group.id)
-    //   .collection('messages')
-    //   .add(messageModel)
-    //   .then(() => {
-    //     console.log("Add Message Successfully");
-    //   });
+    const usersCollection = firestore().collection("messages");
+    usersCollection
+      .doc(this.props.group.id)
+      .collection("messages")
+      .add(messageModel)
+      .then(() => {
+        console.log("Add Message Successfully");
+      });
   }
 
   renderItem = ({ item }) => {
+    console.log(item);
     if (item.id != auth().currentUser.uid) {
       return (
         <LeftChatBubble
@@ -74,7 +93,7 @@ class ChatView extends Component {
         <View style={styles.container}>
           <ChatHeader
             email={this.props.group.groupName}
-            users={this.props.group.membersName.join(",")}
+            users={this.props.group.members.join(",")}
             onTapBtnBack={() => {
               this.props.navigation.goBack();
             }}
@@ -83,7 +102,7 @@ class ChatView extends Component {
             data={this.state.messages}
             extraData={this.state}
             renderItem={this.renderItem}
-            inverted
+           
             keyExtractor={(item) => item.id + utils.makeId(8)}
           />
           <SendBox
