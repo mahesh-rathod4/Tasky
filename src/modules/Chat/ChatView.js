@@ -4,8 +4,11 @@ import LeftChatBubble from "../../components/LeftChatBubble";
 import RightChatBubble from "../../components/RightChatBubble";
 import ChatHeader from "../../components/ChatHeader";
 import SendBox from "../../components/SendBox";
+import { connect } from "react-redux";
+import saveGroupReducer from "../Home/reducer"
 
-export default class ChatView extends Component {
+
+class ChatView extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +18,10 @@ export default class ChatView extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.group);
+    console.log(this.props.group.id);
+    if (this.props.group != undefined) {
+      console.log(this.props.group.members.join(','));
+    }
   }
 
   renderItem = ({ item }) => {
@@ -32,17 +38,13 @@ export default class ChatView extends Component {
       <SafeAreaView style={{ flex: 1 }}>
         <View style={styles.container}>
           <ChatHeader
-            email={"j"}
-            users={"users"}
+            email={this.props.group.groupName}
+            users={this.props.group.members.join(',')}
             onTapBtnBack={() => {
               this.props.navigation.goBack();
             }}
           />
-          <FlatList
-            data={this.state.messages}
-            renderItem={this.renderItem}
-            keyExtractor={(item) => item.id}
-          />
+          <FlatList data={this.state.messages} renderItem={this.renderItem} />
           <SendBox />
         </View>
       </SafeAreaView>
@@ -56,3 +58,17 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
 });
+
+const mapStateToProps = state => {
+  return {
+    group: state.saveGroupReducer.group,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  // return {
+  //   reduxSaveUser: user => dispatch(saveUserDetails(user)),
+  // };
+};
+
+export default connect(mapStateToProps, null)(ChatView);

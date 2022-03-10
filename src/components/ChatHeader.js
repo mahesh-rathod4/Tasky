@@ -28,7 +28,7 @@ export default class ChatHeader extends Component {
         <TouchableOpacity>
           <View style={{ paddingHorizontal: 8 }}>
             <Text>{this.props.email}</Text>
-            <Text>{this.props.users}</Text>
+            <Text numberOfLines={1} style={{fontSize:10, width:"60%"}}>{this.props.users}</Text>
           </View>
         </TouchableOpacity>
       </View>
