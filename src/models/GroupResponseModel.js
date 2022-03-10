@@ -6,7 +6,8 @@ export default class GroupResponseModel {
     members,
     groupName,
     recentMsg,
-    lastMsgTime
+    lastMsgTime,
+    membersName
   ) {
     this.createAt = createAt;
     this.createBy = createBy;
@@ -15,5 +16,6 @@ export default class GroupResponseModel {
     this.groupName = groupName;
     this.recentMsg = recentMsg;
     this.lastMsgTime = lastMsgTime;
+    this.membersName = membersName;
   }
 }

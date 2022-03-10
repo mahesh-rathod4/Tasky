@@ -27,12 +27,13 @@ export default class SendBox extends Component {
             if (value.length < 1) {
               this.setState({ isEnable: false });
             } else {
+              this.props.onChangeText(value);
               this.setState({ isEnable: true });
             }
           }}
           placeholder="Message.."
         />
-        <TouchableOpacity disabled={this.state.isEnable ? false : true}>
+        <TouchableOpacity disabled={this.state.isEnable ? false : true} onPress={this.props.onTapBtnSend}>
           <Text
             style={
               this.state.isEnable ? styles.enableTitle : styles.disableTitle

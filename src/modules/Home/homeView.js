@@ -62,6 +62,7 @@ class HomeView extends Component {
         createBy,
         members,
         recentMsg,
+        membersName
       } = groupDoc.data();
       const groupResponseModel = new GroupResponseModel(
         createAt,
@@ -70,7 +71,8 @@ class HomeView extends Component {
         members,
         groupName,
         recentMsg,
-        lastMsgTime
+        lastMsgTime,
+        membersName
       );
       responseGroups.push(groupResponseModel);
     });

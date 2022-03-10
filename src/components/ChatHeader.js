@@ -1,5 +1,6 @@
 import { Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import React, { Component } from "react";
+import {Color} from "../utils/Colors";
 
 export default class ChatHeader extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class ChatHeader extends Component {
         <TouchableOpacity>
           <View style={{ paddingHorizontal: 8 }}>
             <Text>{this.props.email}</Text>
-            <Text numberOfLines={1} style={{fontSize:10, width:"60%"}}>{this.props.users}</Text>
+            <Text numberOfLines={1} style={{fontSize:10, width:"60%",color:Color.subtitle}}>{this.props.users}</Text>
           </View>
         </TouchableOpacity>
       </View>
