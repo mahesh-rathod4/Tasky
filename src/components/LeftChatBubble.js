@@ -14,11 +14,11 @@ export default class LeftChatBubble extends Component {
             fontSize: 12,
           }}
         >
-          Mahesh Rathod
+          {this.props.name}
         </Text>
         <View style={styles.mssageTime}>
-          <Text style={{ width: "75%", paddingTop: 4 ,color:Color.title}}>
-            Message
+          <Text style={{ width: "75%", paddingTop: 4, color: Color.title }}>
+            {this.props.message}
           </Text>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
@@ -32,7 +32,7 @@ export default class LeftChatBubble extends Component {
                 fontSize: 12,
               }}
             >
-              8.20 Pm
+              {this.props.date}
             </Text>
           </View>
         </View>

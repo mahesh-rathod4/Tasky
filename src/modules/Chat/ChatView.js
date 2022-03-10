@@ -6,6 +6,10 @@ import ChatHeader from "../../components/ChatHeader";
 import SendBox from "../../components/SendBox";
 import { connect } from "react-redux";
 import saveGroupReducer from "../Home/reducer";
+import firestore from "@react-native-firebase/firestore";
+import MessageModel from "../../models/MessageModel";
+import auth from "@react-native-firebase/auth";
+import utils from "../../utils/Utils";
 
 class ChatView extends Component {
   constructor(props) {
@@ -18,21 +22,49 @@ class ChatView extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.group.id);
     if (this.props.group != undefined) {
     }
   }
 
   sendMessage() {
-    
+    const authId = auth().currentUser.uid;
+    const email = auth().currentUser.email;
+    const messageModel = new MessageModel(
+      authId,
+      this.state.msg,
+      new Date(),
+      email
+    );
+    const messages = this.state.messages;
+    messages.push(messageModel);
+    messages.reverse();
+    this.setState({ messages: messages });
+    // const usersCollection = firestore().collection("messages");
+    // usersCollection
+    //   .doc(this.props.group.id)
+    //   .collection('messages')
+    //   .add(messageModel)
+    //   .then(() => {
+    //     console.log("Add Message Successfully");
+    //   });
   }
 
   renderItem = ({ item }) => {
-    if (item == 0) {
-      return <LeftChatBubble />;
-    }
-    {
-      return <RightChatBubble />;
+    if (item.id != auth().currentUser.uid) {
+      return (
+        <LeftChatBubble
+          message={item.message}
+          name={item.name}
+          date={utils.formatAMPM(item.date)}
+        />
+      );
+    } else {
+      return (
+        <RightChatBubble
+          message={item.message}
+          date={utils.formatAMPM(item.date)}
+        />
+      );
     }
   };
 
@@ -47,7 +79,13 @@ class ChatView extends Component {
               this.props.navigation.goBack();
             }}
           />
-          <FlatList data={this.state.messages} renderItem={this.renderItem} />
+          <FlatList
+            data={this.state.messages}
+            extraData={this.state}
+            renderItem={this.renderItem}
+            inverted
+            keyExtractor={(item) => item.id + utils.makeId(8)}
+          />
           <SendBox
             onChangeText={(value) => {
               this.setState({ msg: value });

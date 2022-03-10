@@ -11,7 +11,7 @@ import LoginView from "./src/modules/Login/LoginView";
 import NewChatView from "./src/modules/NewChat/NewChatView";
 import { initializeApp } from "firebase/app";
 import ChatView from "./src/modules/Chat/ChatView";
-import  configureStore  from "./src/store";
+import configureStore from "./src/store";
 import { Provider } from "react-redux";
 
 const Stack = createNativeStackNavigator();

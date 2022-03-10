@@ -65,10 +65,12 @@ export default class LoginView extends Component {
     if (this.validateEmail() && this.validatePassword()) {
       this.setState({ isLoading: true });
       //signInWithEmailAndPassword
+      //createUserWithEmailAndPassword;
       auth()
-        .createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(() => {
-          this.createUser();
+          const cID = auth().currentUser.uid;
+          this.checkIfUserExists(cID);
           this.setState({ isLoading: false });
           this.props.navigation.navigate("Home");
         })
@@ -105,6 +107,19 @@ export default class LoginView extends Component {
       .set(userModel)
       .then(() => {
         console.log("User added!");
+      });
+  }
+
+  async checkIfUserExists(uid) {
+    firestore()
+      .collection("Users")
+      .doc(uid)
+      .get()
+      .then((querySnapshot) => {
+        console.log("User Exist!");
+      })
+      .catch((err) => {
+        this.createUser();
       });
   }
 

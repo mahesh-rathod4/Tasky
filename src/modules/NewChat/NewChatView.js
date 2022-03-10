@@ -7,7 +7,8 @@ import UIButton from "../../components/UIButton";
 import LoaderView from "../../components/LoaderView";
 import UITextField from "../../components/UITextField";
 import GroupModel from "../../models/GroupModel";
-import makeId from "../../utils/Utils";
+import utils from "../../utils/Utils";
+
 
 export default class NewChatView extends Component {
   constructor() {
@@ -23,6 +24,10 @@ export default class NewChatView extends Component {
 
   componentDidMount() {
     this.unsubscribe = this.docs.onSnapshot(this.fetchUsers);
+  }
+
+  componentWillUnmount(){
+    
   }
 
   fetchUsers = (querySnapshot) => {
@@ -90,7 +95,7 @@ export default class NewChatView extends Component {
         alert("At list select one user");
       } else {
         const groupCollection = firestore().collection("Group");
-        const id = makeId(8);
+        const id = utils.makeId(8);
         const ids = selectedUsers.map((user) => user.id);
         const group = new GroupModel(
           new Date(),

@@ -9,7 +9,7 @@ export default class RightChatBubble extends Component {
         <Text />
         <View style={styles.bubble}>
           <View style={styles.mssageTime}>
-            <Text style={{ paddingVertical: 8,color:Color.title }}>Message</Text>
+            <Text style={{ paddingVertical: 8,color:Color.title }}>{this.props.message}</Text>
             <View
               style={{
                 flexDirection: "row",
@@ -26,7 +26,7 @@ export default class RightChatBubble extends Component {
                   fontSize: 12,
                 }}
               >
-                8.20 Pm
+               {this.props.date}
               </Text>
             </View>
           </View>

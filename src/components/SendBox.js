@@ -13,6 +13,7 @@ export default class SendBox extends Component {
     super(props);
     this.state = {
       isEnable: false,
+      msg: "",
     };
   }
 
@@ -22,8 +23,10 @@ export default class SendBox extends Component {
         <TextInput
           style={styles.message}
           multiline
+          value={this.state.msg}
           onChangeText={(value) => {
             // this.state({ msg: value });
+            this.setState({ msg: value });
             if (value.length < 1) {
               this.setState({ isEnable: false });
             } else {
@@ -33,7 +36,13 @@ export default class SendBox extends Component {
           }}
           placeholder="Message.."
         />
-        <TouchableOpacity disabled={this.state.isEnable ? false : true} onPress={this.props.onTapBtnSend}>
+        <TouchableOpacity
+          disabled={this.state.isEnable ? false : true}
+          onPress={() => {
+            this.props.onTapBtnSend();
+            this.setState({ msg: "", isEnable: false });
+          }}
+        >
           <Text
             style={
               this.state.isEnable ? styles.enableTitle : styles.disableTitle
