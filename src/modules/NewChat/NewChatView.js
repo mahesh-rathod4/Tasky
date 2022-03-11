@@ -9,7 +9,6 @@ import UITextField from "../../components/UITextField";
 import GroupModel from "../../models/GroupModel";
 import utils from "../../utils/Utils";
 
-
 export default class NewChatView extends Component {
   constructor() {
     super();
@@ -26,9 +25,7 @@ export default class NewChatView extends Component {
     this.unsubscribe = this.docs.onSnapshot(this.fetchUsers);
   }
 
-  componentWillUnmount(){
-    
-  }
+  componentWillUnmount() {}
 
   fetchUsers = (querySnapshot) => {
     this.setState({ isLoading: true });
@@ -97,6 +94,7 @@ export default class NewChatView extends Component {
         const groupCollection = firestore().collection("Group");
         const id = utils.makeId(8);
         const ids = selectedUsers.map((user) => user.id);
+        ids.push(auth().currentUser.uid);
         const group = new GroupModel(
           new Date(),
           auth().currentUser.uid,
