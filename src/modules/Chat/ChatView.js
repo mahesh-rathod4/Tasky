@@ -5,11 +5,11 @@ import RightChatBubble from "../../components/RightChatBubble";
 import ChatHeader from "../../components/ChatHeader";
 import SendBox from "../../components/SendBox";
 import { connect } from "react-redux";
-import saveGroupReducer from "../Home/reducer";
 import firestore from "@react-native-firebase/firestore";
 import MessageModel from "../../models/MessageModel";
 import auth from "@react-native-firebase/auth";
 import utils from "../../utils/Utils";
+import LoaderView from "../../components/LoaderView";
 
 class ChatView extends Component {
   constructor(props) {
@@ -27,13 +27,13 @@ class ChatView extends Component {
   }
 
   componentDidMount() {
-    console.log("CurrentUserID", auth().currentUser.uid);
     this.unsubscribe = this.docs.onSnapshot(this.fetchMsgs);
   }
 
   componentWillUnmount() {}
 
   fetchMsgs = (querySnapshot) => {
+    this.setState({ isLoading: true });
     const ar = [];
     querySnapshot.forEach((msgDoc) => {
       console.log(msgDoc.data());
@@ -41,7 +41,8 @@ class ChatView extends Component {
       const messageModel = new MessageModel(id, message, date.toDate(), name);
       ar.push(messageModel);
     });
-    this.setState({ messages: ar });
+    this.setState({ isLoading: false });
+    this.setState({ messages: ar.reverse() });
   };
 
   sendMessage() {
@@ -55,7 +56,7 @@ class ChatView extends Component {
     );
     const messages = this.state.messages;
     messages.push(messageModel);
-    //messages.reverse();
+    // messages.reverse();
     this.setState({ messages: messages });
     const usersCollection = firestore().collection("messages");
     usersCollection
@@ -86,11 +87,13 @@ class ChatView extends Component {
       );
     }
   };
+  
 
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={styles.container}>
+          <LoaderView loading={this.state.isLoading} />
           <ChatHeader
             email={this.props.group.groupName}
             users={this.props.group.members.join(",")}
@@ -102,7 +105,8 @@ class ChatView extends Component {
             data={this.state.messages}
             extraData={this.state}
             renderItem={this.renderItem}
-           
+            inverted={-1}
+            reference={(ref) => (this.flatListRef = ref)}
             keyExtractor={(item) => item.id + utils.makeId(8)}
           />
           <SendBox
