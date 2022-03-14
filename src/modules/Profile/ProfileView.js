@@ -13,8 +13,16 @@ export default class ProfileView extends Component {
             onTapAddProfile={() => {}}
           />
           <View>
-            <UserDetail heading={"Email"} email={"mahesh@gmail.com"} />
-            <UserDetail heading={"Mobile No"} email={"+918141691419"} />
+            <UserDetail
+              heading={"Email"}
+              email={"mahesh@gmail.com"}
+              isShow={false}
+            />
+            <UserDetail
+              heading={"Mobile No"}
+              email={"+918141691419"}
+              isShow={true}
+            />
           </View>
         </View>
       </ScrollView>

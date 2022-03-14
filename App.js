@@ -23,22 +23,16 @@ function App() {
   return (
     <Provider store={store}>
       <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Stack.Navigator initialRouteName="Profile">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="Home"
             component={HomeView}
-            options={{
+            options={({ navigation }) => ({
               title: "Tasky",
               headerRight: () => (
-                // <Button
-                //   onPress={() => alert("This is a button!")}
-                //   title="Info"
-                //   color="#fff"
-                // />
                 <TouchableOpacity
                   onPress={() => {
-                    // const {navigation }
-                    //navigation.navigate("Profile");
+                    navigation.navigate("Profile");
                   }}
                 >
                   <Image
@@ -49,7 +43,7 @@ function App() {
                   />
                 </TouchableOpacity>
               ),
-            }}
+            })}
           />
           <Stack.Screen
             name="Login"

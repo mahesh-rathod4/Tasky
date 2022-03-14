@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { Color } from "../../../utils/Colors";
 
@@ -22,12 +22,14 @@ const UserDetail = (props) => {
         </View>
       </View>
 
-      <Image
-        style={{ width: 20, height: 20 }}
-        source={{
-          uri: "https://reactnative.dev/img/tiny_logo.png",
-        }}
-      />
+      {props.isShow ? (
+        <TouchableOpacity>
+          <Image
+            style={{ width: 20, height: 20,tintColor:Color.primary }}
+            source={require("../../../assets/images/edit.png")}
+          />
+        </TouchableOpacity>
+      ) : null}
     </View>
   );
 };
