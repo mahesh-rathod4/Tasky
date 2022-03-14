@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useColorScheme } from "react-native";
+import { useColorScheme, Image, TouchableOpacity } from "react-native";
 import {
   NavigationContainer,
   DefaultTheme,
@@ -11,7 +11,8 @@ import LoginView from "./src/modules/Login/LoginView";
 import NewChatView from "./src/modules/NewChat/NewChatView";
 import { initializeApp } from "firebase/app";
 import ChatView from "./src/modules/Chat/ChatView";
-import  configureStore  from "./src/store";
+import ProfileView from "./src/modules/Profile/ProfileView";
+import configureStore from "./src/store";
 import { Provider } from "react-redux";
 
 const Stack = createNativeStackNavigator();
@@ -22,16 +23,43 @@ function App() {
   return (
     <Provider store={store}>
       <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Profile">
           <Stack.Screen
             name="Home"
             component={HomeView}
-            options={{ title: "Tasky" }}
+            options={{
+              title: "Tasky",
+              headerRight: () => (
+                // <Button
+                //   onPress={() => alert("This is a button!")}
+                //   title="Info"
+                //   color="#fff"
+                // />
+                <TouchableOpacity
+                  onPress={() => {
+                    // const {navigation }
+                    //navigation.navigate("Profile");
+                  }}
+                >
+                  <Image
+                    source={{
+                      uri: "https://reactjs.org/logo-og.png",
+                    }}
+                    style={{ width: 32, height: 32, borderRadius: 32 / 2 }}
+                  />
+                </TouchableOpacity>
+              ),
+            }}
           />
           <Stack.Screen
             name="Login"
             component={LoginView}
             options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Profile"
+            component={ProfileView}
+            options={{ headerShown: true }}
           />
           <Stack.Screen
             name="Chat"
